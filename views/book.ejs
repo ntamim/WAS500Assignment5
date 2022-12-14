@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Book Details</title>
+    <link rel="stylesheet" href="/css/nav-bar.css" />
+    <!-- bootstrap -->
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+  </head>
+  <body>
+    <ul>
+      <li class="active" style="background-color: #936565">
+        <a href="/">Home</a>
+      </li>
+      <li><a href="/books">Book List</a></li>
+      <li><a href="/search_books">Search Book List</a></li>
+    </ul>
+    <style>
+      body {
+        background-image: url('https://img.freepik.com/free-photo/open-book-with-white-background_23-2148882765.jpg?w=1380&t=st=1668026090~exp=1668026690~hmac=04781beebca9891d243a79bf82fe8ad8a26e3e76c3c310bd97878cba7d7f0d95');
+      }
+      </style> 
+    <!-- Card -->
+    <h1 style="text-align: center"><b>Book Details</b></h1>
+    <!-- Info of the book -->
+    <% characters.forEach(function(character) { %>
+          
+    <div class="card" style="width: 60%; margin-left: 25%">
+      <img
+        class="card-img-top"
+        src="../images/<%= character.image %>"
+        alt="Card image"
+        style="width: 50%; margin-left: 25%; margin-top: 10px"
+      />
+      <div class="card-body">
+        <h4 class="card-title"><%= character.name %> </h4>
+        <p class="card-text">
+          <%= character.author_name %><br/>
+          <%= character.description %>
+        </p>
+      </div>
+    </div>
+    <%  }); %>
+  </body>
+</html>
